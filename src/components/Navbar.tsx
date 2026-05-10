@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export default function Navbar() {
-  const { user, login, logout, isAdmin } = useAuth();
+  const { user, login, logout, isAdmin, loading } = useAuth();
+
+  if (loading) return <nav className="bg-white shadow-md"><div className="max-w-7xl mx-auto px-4 h-16 flex items-center">Loading...</div></nav>;
 
   return (
     <nav className="bg-white shadow-md">

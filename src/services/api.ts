@@ -12,7 +12,7 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      window.location.href = '/login';
+      console.warn('Unauthorized - user not logged in');
     }
     return Promise.reject(error);
   }
